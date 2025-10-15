@@ -1,0 +1,91 @@
+🧩 1. Install Required Dependencies
+
+    Open your terminal and install VirtualBox, Vagrant, and Git.
+
+    sudo apt update && sudo apt upgrade -y
+    sudo apt install virtualbox vagrant git unzip -y
+
+
+    ✅ Note:
+
+    Homestead uses Vagrant to manage virtual machines.
+
+    VirtualBox is the most common provider, but you can use others like Libvirt or VMware if you prefer.
+
+
+🏠 2. Clone the Homestead Repository
+
+    Clone the official Laravel Homestead repository into your home directory.
+
+    cd ~
+    git clone https://github.com/laravel/homestead.git Homestead
+
+
+    Go into the Homestead directory:
+
+    cd Homestead
+
+
+    Checkout the latest stable version:
+
+    git checkout release
+
+
+⚙️ 3. Run the Initialization Script
+
+This will create the Homestead.yaml configuration file in the ~/.homestead directory.
+
+bash init.sh
+
+
+🧾 4. Configure Homestead.yaml
+    Open the configuration file:
+
+    nano ~/.homestead/Homestead.yaml
+
+
+    Example configuration:
+
+    ip: "192.168.56.56"
+    memory: 2048
+    cpus: 2
+    provider: virtualbox
+
+    authorize: ~/.ssh/id_rsa.pub
+
+    keys:
+        - ~/.ssh/id_rsa
+
+    folders:
+        - map: ~/code
+        to: /home/vagrant/code
+
+    sites:
+        - map: homestead.test
+        to: /home/vagrant/code/laravel/public
+
+    databases:
+        - homestead
+
+
+    💡 Notes:
+
+    map under folders = your local project folder.
+
+    to = where it will be available inside the VM.
+
+    homestead.test will be your local development domain.
+
+    Ensure you already have an SSH key (if not, run ssh-keygen -t rsa).
+
+
+🌐 5. Add a Host Entry
+
+    Edit your system’s /etc/hosts file so your browser can resolve the Homestead site.
+
+    sudo nano /etc/hosts
+
+
+    Add this line:
+
+    192.168.56.56   homestead.test

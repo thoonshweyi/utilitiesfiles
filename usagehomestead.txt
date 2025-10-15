@@ -1,0 +1,25 @@
+For Daily 
+-cd Homestead
+-vagrant up
+-cd code
+-go to project directory
+For New Project 
+-cd Homestead
+-vagrant up
+-cd code
+-git clone (git ssh link)
+-cd project directory
+-composer install
+-cp .env.example .env
+-exit
+Homestead မှ အပြင်ထွက်ပြီးနောက်
+-  cd code
+- cd project directory
+- code .
+- edit env file (host- homestead ip, username- postgres, password- postgres’ password)
+-Open Homestead.yaml file and add new site name and project directory
+- Run ‘sudo nano /etc/hosts’
+-Add new site name (site name must equal to site name of Homestead.yaml file)
+-cd Homestead
+-vagrant reload --provision
+
