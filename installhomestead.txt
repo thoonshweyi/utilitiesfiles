@@ -89,3 +89,42 @@ bash init.sh
     Add this line:
 
     192.168.56.56   homestead.test
+
+
+🚀 6. Launch Homestead
+
+    Start the Homestead virtual machine with:
+
+    cd ~/Homestead
+    vagrant up
+
+
+    This may take a while the first time (it downloads the box image).
+
+🖥️ 7. Connect to Homestead
+
+    Once started, SSH into your virtual machine:
+
+    vagrant ssh
+
+
+    You should now see:
+
+    vagrant@homestead:~$
+
+🧱 8. Access Laravel Project
+
+    If your Laravel project is in ~/code/laravel, open your browser and visit:
+
+    http://homestead.test
+
+
+    You should see your Laravel welcome page. 🎉
+
+🔧 9. Common Commands
+    Command	Description
+    vagrant up	Start the Homestead VM
+    vagrant halt	Shut down the VM
+    vagrant reload --provision	Reboot and apply config changes
+    vagrant ssh	SSH into VM
+    vagrant destroy	Remove VM completely
